@@ -1,0 +1,5 @@
+# Don't track PyCharm config files.
+.idea/
+*.xml
+*.pyc*
+env/
