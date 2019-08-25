@@ -75,7 +75,7 @@ def send_text_file():
 
 @app.route('/imdb/name.basics.tsv')
 def send_name():
-    return send_file('../IMDb/DataSets/name.basics.tsv')
+    return send_file('./IMDb/DataSets/name.basics.tsv')
 
 
 ###########################################################
