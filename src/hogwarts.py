@@ -15,6 +15,11 @@ from flask import Flask, render_template, request, send_file
 app = Flask(__name__)
 
 
+###########################################################
+################## Main Returns ###########################
+###########################################################
+
+
 @app.route("/")
 def load_splash_page():
     return render_template("index.html")
@@ -61,6 +66,16 @@ def send_stegasour():
 @app.route('/challengeItems/challenge1.txt')
 def send_text_file():
     return send_file('./templates/challengeItems/challenge1.txt')
+
+
+###########################################################
+################## IMDb Returns ###########################
+###########################################################
+
+
+@app.route('/imdb/name.basics.tsv')
+def send_name():
+    return send_file('../IMDb/DataSets/name.basics.tsv')
 
 
 ###########################################################
