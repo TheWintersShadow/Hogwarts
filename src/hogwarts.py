@@ -1,4 +1,4 @@
-# Created by Albus Wulfric Brain Dumbledore
+# Created by Albus Percival Wulfric Brain Dumbledore
 # Date: 8/9/2019
 # Time: 16:49
 
@@ -46,6 +46,11 @@ def Quote():
     QoD = dict()
     QoD['Quote'], QoD['Author'] = quote.main()
     return QoD
+
+
+###########################################################
+################## File Returns ###########################
+###########################################################
 
 
 @app.route('/images/hogwarts.jpg')
