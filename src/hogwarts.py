@@ -63,9 +63,9 @@ def send_hogwarts_logo():
     return send_file('./templates/images/hogwarts-logo.png')
 
 
-@app.route('/challengeItems/stegasour.jpg')
+@app.route('/challengeItems/stegasour.png')
 def send_stegasour():
-    return send_file('./templates/challengeItems/stegasour.jpg')
+    return send_file('./templates/challengeItems/stegasour.png')
 
 
 @app.route('/challengeItems/challenge1.txt')
