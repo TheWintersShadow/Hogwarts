@@ -2,8 +2,6 @@
 # Date: 8/9/2019
 # Time: 16:49
 
-import logging
-
 import Plugins.geo_ip as geo
 import Plugins.news as news
 import Plugins.quote as quote
@@ -87,7 +85,6 @@ def send_text_file():
 ###########################################################
 ################## GF Returns #############################
 ###########################################################
-
 
 @app.route('/fpiS3GQz4Zx99')
 def return_c1_page():
