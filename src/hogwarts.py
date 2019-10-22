@@ -26,8 +26,13 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def load_splash_page():
+def load_index():
     return render_template("index.html")
+
+
+@app.route("/splash_page")
+def load_splash_page():
+    return render_template("Splash_Page.html")
 
 
 @app.route('/api/geo_ip/', methods=['POST'])
@@ -66,6 +71,11 @@ def Quote():
 @app.route('/images/hogwarts.jpg')
 def send_hogwarts():
     return send_file('./templates/images/hogwarts.jpg')
+
+
+@app.route('/javascript/plugins.js')
+def send_plugins():
+    return send_file('./templates/javascript/plugins.js')
 
 
 @app.route('/images/hogwarts-logo.png')
