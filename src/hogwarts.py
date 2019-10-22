@@ -10,6 +10,7 @@ import Posts.challenge_one as c1
 import Posts.challenge_three as c3
 import Posts.challenge_two as c2
 from flask import Flask, render_template, request, send_file
+import logging
 
 logging.basicConfig(filename='API.log', level=logging.DEBUG,
                     format='%(name)s -- %(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
