@@ -7,42 +7,29 @@
 <body>
 <h1>Welcome the the Grey Fellow's Induction Challenges</h1><br>
 <h2>How to submit the challenges:</h2>
-After you solve the challenge you must send a POST request to the answer URL that we have provided. In the post request
-body you need the key: "Flag" and the value is the flag. We recommend using <br> the program Postman to send your post
-request. You can also do it in python if you want. If you have any questions you can text: (785) 813-1143
-<br><br>
+Send a POST request to the answer URL that we have provided. Format:
+<p style="color:grey">curl -X POST http://hogwartslibrary.com:777/api/<b>[SUBMISSION_KEY]</b> -d Flag=<b>[FLAG]</b></p>
+If you have any questions you can text: (785) 813-1143
+<br>
 
-<h2>The Challanges:</h2>
+<h2>The Challenges:</h2>
 
-<h3>Challenge 1:</h3>Please download this text file. You will find the flag inside. We promise that this isn't a virus.
-If you are concerned
-you can run it though your virus scanner of choice. We recommend VirusTotal.com.
-<br>
-<a download href="challengeItems/challenge1.txt">Download TXT File</a>
-<h4>Check Challenge One Flag:</h4>
-When you are ready to check you answer send a post request to:
-<p style="color:blue">http://hogwartslibrary.com:777/api/0EHEOgBABoeLR</p> Reminder to make your post request with the
-key "Flag" (capital F) and the value being the flag.
-<br>
-<h3>Challenge 2:</h3>
-Please download this file and find the flag. We promise that this isn't a virus. If you are concerned you can run it
-though your virus scanner of choice. We recommend VirusTotal.com.
-<br>
-<a download href="challengeItems/stegasour.png">Download PNG File</a>
-<h4>Check Challenge Two Flag:</h4>
-When you are ready to check you answer send a post request to:
-<p style="color:blue">http://hogwartslibrary.com:777/api/W4qu75hmCXVJE</p> Reminder to make your post request with the
-key "Flag" (capital F) and the value being the flag.
+<h3>Challenge 1:</h3>The flag is hidden inside the below text file.
+<a download href="challengeItems/challenge1.txt">Download TXT File</a> <br>
+Challenge 1 Submission Key: <b>0EHEOgBABoeLR</b>
+
+<h3>Challenge 2:</h3>The flag is hidden inside the below image.
+<a download href="challengeItems/stegasour.png">Download PNG File</a> <br>
+Challenge 2 Submission Key: <b>W4qu75hmCXVJE</b>
+
 <h3>Challenge 3:</h3>
 Solve the collatz conjecture for the numbers 50,000 to 50,500. Find any reductions that reach the 222th step
 (counting like a programmer) and save the number at that step. The flag is these numbers appended together in a string.
-
-For example, for numbers 0-100 reduced that reach step 111: 73 reduces to 8 at the 111th step; 97 reduces to 20 at the
-111th step. No other numbers make it to this step. Therefore the flag would be 820.
-<br>
-<h4>Check Challenge Three Flag:</h4>
-When you are ready to check you answer send a post request to:
-<p style="color:blue">http://hogwartslibrary.com:777/api/2sO6kflUpe1o1</p> Reminder to make your post request with the
-key "Flag" (capital F) and the value being the flag.
+<br> <br>
+For example, let's examine numbers 0-100 for step 111. The only two numbers that take 111 steps or more to compute are
+73 (reduces to 8 at the 111th step) and 97 (reduces to 20 at the
+111th step). No other numbers make it to this step. Therefore the flag would be "8"+"20" so "820".
+<br> <br>
+Challenge 3 Submission Key: <b>2sO6kflUpe1o1</b>
 </body>
 </html>
