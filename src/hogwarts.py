@@ -12,7 +12,7 @@ import Posts.challenge_two as c2
 from flask import Flask, render_template, request, send_file
 import logging
 
-logging.basicConfig(level=logging.DEBUG,
+logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.DEBUG,
                     format='%(name)s -- %(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
 gf = logging.getLogger('GF')
 gen = logging.getLogger('GEN')
