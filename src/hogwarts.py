@@ -37,7 +37,7 @@ def load_splash_page():
 
 @app.route('/api/geo_ip/', methods=['POST'])
 def IP():
-    IP_ADDR = request.form['IP']
+    IP_ADDR = request.json['IP']
     logging.info('Geo IP accessed by: ' + request.remote_addr)
     logging.info(request.remote_addr + ' ran GEO IP with the IP address: ' + IP_ADDR)
     return geo.main(IP_ADDR)
