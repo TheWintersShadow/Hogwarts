@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Hogwarts</title>
 </head>
-<body>
+<body onload="QoD(); WEATHER()">
 <h1>Hogwarts School for Witchcraft and Wizardry</h1>
 <table border="3" style="height: 100%; float: left;" width="16%">
     <tbody>
@@ -17,40 +17,58 @@
 </table>
 <table border="3" style="height: 100%; float: left;" width="50%">
     <tbody>
-    <tr>
-        <td style="width: 353px;"><h3>Quote</h3></td>
+    <tr> <!--Quote of the day.-->
+        <td style="width: 353px;"><h3>Quote:</h3>
+            <p id="QoD_Quote">"Something went wrong."</p>
+            <p id="QoD_Author">-Ej Simms</p></td>
     </tr>
-    <tr>
-        <td style="width: 353px;">
-            <h3>IP Lookup</h3>
-            IP Address: <input id='IP-ADDR' type="text">
-            <button onclick="IP_LOOKUP()">Locate</button>
-            <span>{weather}</span>
-        </td>
-    </tr>
-    <tr>
+    <tr>    <!--Weather Data-->
         <td style="width: 353px;">
             <table style="height: 145px;" width="346">
                 <tbody>
                 <h3>Weather</h3>
-                <button onclick="WEATHER()">Load Weather</button>
                 <tr style="height: 31.328125px;">
-                    <td style="width: 57.375px; height: 31.328125px;">Monday</td>
-                    <td style="width: 58.890625px; height: 31.328125px;">Tuesday</td>
-                    <td style="width: 80.03125px; height: 31.328125px;">Wednesday</td>
-                    <td style="width: 64.921875px; height: 31.328125px;">Thursday</td>
-                    <td style="width: 50.796875px; height: 31.328125px;">Friday</td>
+                    <td style="width: 57.375px; height: 31.328125px;">Today</td>
+                    <td style="width: 58.890625px; height: 31.328125px;">Tonight</td>
+                    <td style="width: 80.03125px; height: 31.328125px;">Tomorrow</td>
                 </tr>
                 <tr style="height: 68px;">
-                    <td style="width: 57.375px; height: 68px;">&nbsp;</td>
-                    <td style="width: 58.890625px; height: 68px;">&nbsp;</td>
-                    <td style="width: 80.03125px; height: 68px;">&nbsp;</td>
-                    <td style="width: 64.921875px; height: 68px;">&nbsp;</td>
-                    <td style="width: 50.796875px; height: 68px;">&nbsp;</td>
+                    <td style="width: 57.375px; height: 68px;">
+                        <p id="Today">Today's weather
+                        </p>
+                    </td>
+                    <td style="width: 58.890625px; height: 68px;">
+                        <p id="Tonight">Tonight's weather
+                        </p>
+                    </td>
+                    <td style="width: 80.03125px; height: 68px;">
+                        <p id="Tomorrow">Tomorrow's weather
+                        </p>
+                    </td>
                 </tr>
                 </tbody>
             </table>
         </td>
+    </tr>
+    <tr>    <!--IP Lookup-->
+        <td style="width: 353px;">
+            <h3>IP Lookup</h3>
+            IP Address: <input id='IP-ADDR' type="text">
+            <button onclick="IP_LOOKUP()">Locate</button>
+            <div id="IP_INFO">
+                <p id="IP_City">City: </p>
+                <p id="IP_Zip">Zip Code: </p>
+                <p id="IP_Continent">Continent: </p>
+                <p id="IP_Country">Country: </p>
+                <p id="IP_IP">IP: </p>
+                <p id="IP_ISP">ISP: </p>
+                <p id="IP_Mobile">Is this a mobile device: </p>
+                <p id="IP_Latitude">Latitude: </p>
+                <p id="IP_Longitude">Longitude: </p>
+                <p id="IP_Region">Region: </p>
+                <p id="IP_DNS">Reverse DNS: </p>
+                <p id="IP_Time">Time Zone: </p>
+            </div>
     </tr>
     </tbody>
 </table>
