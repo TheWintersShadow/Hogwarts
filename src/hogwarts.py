@@ -78,6 +78,11 @@ def send_plugins():
     return send_file('./templates/javascript/plugins.js')
 
 
+@app.route('/css/basic.css')
+def send_css():
+    return send_file('./templates/css/basic.css')
+
+
 @app.route('/images/hogwarts-logo.png')
 def send_hogwarts_logo():
     return send_file('./templates/images/hogwarts-logo.png')
