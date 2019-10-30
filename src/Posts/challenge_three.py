@@ -6,6 +6,6 @@
 def check_flag(flag_guess):
     actual_flag = "535353535353535353262618221822182226262653"
     if flag_guess.lower() == actual_flag.lower():
-        return "You have gotten the correct flag. Please send a text to (785) 813-1143 to inform us that you are done."
+        return "You have gotten the correct flag. We will contact you soon..."
     else:
         return "This flag is incorrect. Please try again."
