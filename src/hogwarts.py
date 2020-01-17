@@ -14,7 +14,7 @@ import Posts.challenge_three as c3
 import Posts.challenge_two as c2
 from flask import Flask, render_template, request, send_file
 
-logging.basicConfig(filename='API.log', level=logging.INFO,
+logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.INFO,
                     format='%(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
 
 app = Flask(__name__)
