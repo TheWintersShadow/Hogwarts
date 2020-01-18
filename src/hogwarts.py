@@ -12,7 +12,7 @@ import Posts.challenge_four as c4
 import Posts.challenge_one as c1
 import Posts.challenge_three as c3
 import Posts.challenge_two as c2
-from flask import Flask, render_template, request, send_file
+from flask import Flask, jsonify, render_template, request, send_file
 
 logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.INFO,
                     format='%(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
@@ -40,19 +40,19 @@ def IP():
     IP_ADDR = request.json['IP']
     logging.info('Geo IP accessed by: ' + request.remote_addr)
     logging.info(request.remote_addr + ' ran GEO IP with the IP address: ' + IP_ADDR)
-    return geo.main(IP_ADDR)
+    return jsonify(geo.main(IP_ADDR))
 
 
 @app.route('/api/weather/', methods=['GET'])
 def Weather():
     logging.info('Weather accessed by: ' + request.remote_addr)
-    return weather.main()
+    return jsonify(weather.main())
 
 
 @app.route('/api/news/', methods=['GET'])
 def News():
     logging.info('News accessed by: ' + request.remote_addr)
-    return news.main()
+    return jsonify(news.main())
 
 
 @app.route('/api/quote/', methods=['GET'])
@@ -60,7 +60,7 @@ def Quote():
     QoD = dict()
     QoD['Quote'], QoD['Author'] = quote.main()
     logging.info('Quote accessed by: ' + request.remote_addr)
-    return QoD
+    return jsonify(QoD)
 
 
 ###########################################################
