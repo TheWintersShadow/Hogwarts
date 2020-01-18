@@ -12,7 +12,7 @@ import Posts.challenge_four as c4
 import Posts.challenge_one as c1
 import Posts.challenge_three as c3
 import Posts.challenge_two as c2
-from flask import Flask, render_template, request, send_file
+from flask import Flask, jsonify, render_template, request, send_file
 
 logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.INFO,
                     format='%(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
@@ -46,7 +46,7 @@ def IP():
 @app.route('/api/weather/', methods=['GET'])
 def Weather():
     logging.info('Weather accessed by: ' + request.remote_addr)
-    return weather.main()
+    return jsonify(weather.main())
 
 
 @app.route('/api/news/', methods=['GET'])
