@@ -83,3 +83,14 @@ div.scroll {
     overflow-y: auto;
     text-align: justify;
 }
+
+.weather_header {
+    width: 30vh;
+    height: 5vh;
+    text-align: center;
+}
+
+.weather_data {
+    width: 30vh;
+    padding: 3px;
+}

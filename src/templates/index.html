@@ -6,7 +6,7 @@
     <link href="css/basic.css" rel="stylesheet">
     <title>NetSecure</title>
 </head>
-<body onload="NEWS()">
+<body onload="NEWS(); WEATHER()">
 <div class="grid-container">
     <span class="header">NetSecure Dashboard</span>
     <span class="left">
@@ -41,28 +41,28 @@
     <span> <!--Quote of the day.-->
         <h3 class="title">Quote:</h3>
             <p id="QoD_Quote">"Something went wrong."</p>
-            <p id="QoD_Author">-Ej Simms</p>
+            <p id="QoD_Author">-The White Wolf</p>
     </span>
     <span>    <!--Weather Data-->
-            <table style="height: 145px;" width="346">
+            <table>
                 <tbody>
                 <h3 class="title">Weather</h3>
                 <tr style="height: 31.328125px;">
-                    <td style="width: 57.375px; height: 31.328125px;">Today</td>
-                    <td style="width: 58.890625px; height: 31.328125px;">Tonight</td>
-                    <td style="width: 80.03125px; height: 31.328125px;">Tomorrow</td>
+                    <td class="weather_header">Today</td>
+                    <td class="weather_header">Tonight</td>
+                    <td class="weather_header">Tomorrow</td>
                 </tr>
-                <tr style="height: 68px;">
-                    <td style="width: 57.375px; height: 68px;">
-                        <p id="Today">Today's weather
+                <tr style="height: 20vh;">
+                    <td class="weather_data">
+                        <p id="Today">Mostly sunny. Hot with highs in the upper 90s. Southwest winds 5 to 10 mph.
                         </p>
                     </td>
-                    <td style="width: 58.890625px; height: 68px;">
-                        <p id="Tonight">Tonight's weather
+                    <td class="weather_data">
+                        <p id="Tonight">Mostly clear. Lows in the mid 70s. Southwest winds 5 to 10 mph.
                         </p>
                     </td>
-                    <td style="width: 80.03125px; height: 68px;">
-                        <p id="Tomorrow">Tomorrow's weather
+                    <td class="weather_data">
+                        <p id="Tomorrow">Partly sunny. Showers and thunderstorms likely in the afternoon. Highs in the mid 90s. West winds 5 to 10 mph. Chance of rain 70 percent.
                         </p>
                     </td>
                 </tr>
@@ -100,6 +100,7 @@
         </div>
         <!-- Scrolling Text End -->
     </span>
+
     <span class="footer">
         <p>Fill me in!</p>
     </span>
