@@ -62,6 +62,51 @@ function WEATHER() {
 
 }
 
+
+function NEWS() {
+    fetch('/api/news/')
+        .then(response => response.json())
+        .then(data => save_data(data)) // Result from the `response.json()` call
+        .catch(error => console.error(error));
+
+    function save_data(data) {
+        var ul = document.createElement('ul');
+        document.getElementById('news').appendChild(ul);
+        for (let count = 0; count < Object.keys(data).length-1; count++) {
+
+            var li = document.createElement('li');
+            ul.appendChild(li);
+            /*let entry = "<p><img src=" + data[count]['Image URL'] +
+                " width='66' height='66' align='left' style='padding: 3px'/></p>" +
+                "<p><strong>Title</strong>: " +
+                data[count]['Title'] +
+                "<br><strong>Source</strong>: " +
+                data[count]['Source'] + "</p>" +
+                "<p>" + data[count]['Description'] + "   " +
+                "<a href='" + data[count]['External URL'] + "'><br>Read More</a></p>"*/
+            let entry =
+                "<p><strong>Title</strong>: " +
+                data[count]['Title'] +
+                "<br><strong>Source</strong>: " +
+                data[count]['Source'] + "</p>" +
+                "<p>" + data[count]['Description'] + "   " +
+                "<a href='" + data[count]['External URL'] + "'><br>Read More</a></p>"
+            li.innerHTML += entry;
+        }
+
+    }
+
+
+}
+
+/*
+'Title' + data[count]['Title'] +
+                'Source' + data[count]['Source'] +
+                data[count]['Description'] +
+                " " + "<a href='" + data[count]['External URL'] + "'>Read More</a>";
+ */
+
+
 function QoD() {
     fetch('/api/quote/')
         .then(response => response.json())
