@@ -15,7 +15,7 @@ function IP_LOOKUP() {
         .catch(error => console.error(error));
 
     function save_data(data) {
-        let City = JSON.stringify(["City"]);
+        let City = JSON.stringify(data["City"]);
         let Continent = JSON.stringify(data["Continent"]);
         let Country = JSON.stringify(data["Country"]);
         let IP = JSON.stringify(data["IP"]);
@@ -28,7 +28,21 @@ function IP_LOOKUP() {
         let Time = JSON.stringify(data["Time Zone"]);
         let Zip = JSON.stringify(data["Zip"]);
         //document.getElementById('IP_INFO').style.display = 'none'
-        document.getElementById('IP_City').innerHTML = 'City: ' + City.substring(1, City.length - 1);
+        window.alert(
+            'City: ' + City.substring(1, City.length - 1) +
+            '\nContinent: ' + Continent.substring(1, Continent.length - 1) +
+            '\nCountry: ' + Country.substring(1, Country.length - 1) +
+            '\nIP: ' + IP.substring(1, IP.length - 1) +
+            '\nISP: ' + ISP.substring(1, ISP.length - 1) +
+            '\nIs this a mobile device: ' + Mobile.substring(1, Mobile.length - 1) +
+            '\nLatitude: ' + Latitude.substring(1, Latitude.length - 1) +
+            '\nLongitude: ' + Longitude.substring(1, Longitude.length - 1) +
+            '\nRegion: ' + Region.substring(1, Region.length - 1) +
+            '\nReverse DNS: ' + DNS.substring(1, DNS.length - 1) +
+            '\nTime Zone: ' + Time.substring(1, Time.length - 1) +
+            '\nZip Code: ' + Zip.substring(1, Zip.length - 1)
+        );
+        /*document.getElementById('IP_City').innerHTML = 'City: ' + City.substring(1, City.length - 1);
         document.getElementById('IP_Continent').innerHTML = 'Continent: ' + Continent.substring(1, Continent.length - 1);
         document.getElementById('IP_Country').innerHTML = 'Country: ' + Country.substring(1, Country.length - 1);
         document.getElementById('IP_IP').innerHTML = 'IP: ' + IP.substring(1, IP.length - 1);
@@ -39,7 +53,7 @@ function IP_LOOKUP() {
         document.getElementById('IP_Region').innerHTML = 'Region: ' + Region.substring(1, Region.length - 1);
         document.getElementById('IP_DNS').innerHTML = 'Reverse DNS: ' + DNS.substring(1, DNS.length - 1);
         document.getElementById('IP_Time').innerHTML = 'Time Zone: ' + Time.substring(1, Time.length - 1);
-        document.getElementById('IP_Zip').innerHTML = 'Zip Code: ' + Zip.substring(1, Zip.length - 1);
+        document.getElementById('IP_Zip').innerHTML = 'Zip Code: ' + Zip.substring(1, Zip.length - 1);*/
     }
 
 }
