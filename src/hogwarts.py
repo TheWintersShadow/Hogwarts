@@ -7,11 +7,11 @@ import Plugins.news as news
 import Plugins.quote as quote
 import Plugins.weather as weather
 import logging
+from flask import Flask, jsonify, render_template, request, send_file
 
 logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.DEBUG,
                     format='%(name)s -- %(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
-gen = logging.getLogger('GEN')
-from flask import Flask, jsonify, render_template, request, send_file
+
 
 logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.INFO, format='%(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
 
@@ -52,7 +52,7 @@ def News():
 def Quote():
     QoD = dict()
     QoD['Quote'], QoD['Author'] = quote.main()
-    gen.info('Quote accessed by: ' + request.remote_addr)
+    logging.info('Quote accessed by: ' + request.remote_addr)
     return jsonify(QoD)
 
 
