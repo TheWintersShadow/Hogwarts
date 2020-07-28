@@ -1,98 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Hogwarts</title>
-<style>
-    body, html {
-        height: 100%;
-        margin: 0;
-    }
+<script src="javascript/plugins.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <link href="css/basic.css" rel="stylesheet">
+    <title>NetSecure</title>
+</head>
+<body onload="NEWS(); WEATHER(); QoD();">
+<div class="grid-container">
+    <span class="header">NetSecure Dashboard</span>
+    <span class="left">
+            <h3 class="title">Links</h3>
+            <a href="https://git.netsecure.dev" class="links"><img
+                    src="images/gitlab.png" class="logos" width="70" height="70"/><span
+                    class="logos">GitLab</span>
+            </a>
+            <br>
+            <a href="https://kibana.netsecure.dev" class="links"><img
+                    src="images/kibana.png" class="logos" width="70" height="70"/><span
+                    class="logos">Kibana</span>
+            </a>
+            <br>
+            <a href="https://pihole.netsecure.dev/admin" class="links"><img
+                    src="images/pihole.png" class="logos" width="70" height="70"/><span
+                    class="logos">PiHole</span>
+            </a>
+            <br>
+            <a href="https://wiki.netsecure.dev" class="links"><img
+                    src="images/wiki.png" class="logos" width="70" height="70"/><span
+                    class="logos">Wiki</span>
+            </a>
+            <br>
+            <a href="https://bit.netsecure.dev" class="links"><img
+                    src="images/bitwarden.png" class="logos" width="70" height="70"/><span
+                    class="logos">BitWarden</span>
+            </a>
+        </span>
 
-    .bgimg {
-        background-image: url('images/hogwarts.jpg');
-        height: 100%;
-        background-position: center;
-        background-size: cover;
-        position: relative;
-        color: white;
-        font-family: "Courier New", Courier, monospace;
-        font-size: 25px;
-    }
+    <span class="middle">
+    <span> <!--Quote of the day.-->
+        <h3 class="title">Quote:</h3>
+            <p id="QoD_Quote">"Something went wrong."</p>
+            <p id="QoD_Author">-The White Wolf</p>
+    </span>
+    <span>    <!--Weather Data-->
+            <table>
+                <tbody>
+                <h3 class="title">Weather</h3>
+                <tr style="height: 31.328125px;">
+                    <td class="weather_header">Today</td>
+                    <td class="weather_header">Tonight</td>
+                    <td class="weather_header">Tomorrow</td>
+                </tr>
+                <tr style="height: 20vh;">
+                    <td class="weather_data">
+                        <p id="Today">Today's Weather Report
+                        </p>
+                    </td>
+                    <td class="weather_data">
+                        <p id="Tonight">Tonight's Weather Report
+                        </p>
+                    </td>
+                    <td class="weather_data">
+                        <p id="Tomorrow">Tomorrow's Weather Report
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+    </span>
+    <span>    <!--IP Lookup-->
+            <h3 class="title">IP Lookup</h3>
+        <div style="text-align: center">
+            IP Address: <input id='IP-ADDR' type="text">
+            <button class="button" onclick="IP_LOOKUP()" style="align-content: center">Locate</button>
+        </div>
+    </span>
+    </span>
 
-    .topleft {
-        position: absolute;
-        top: 0;
-        left: 16px;
-    }
+    <span class="right">
+        <span style="width: 167px;"><h3 class="title">News</h3></span>
+        <!-- Scrolling Text Start -->
+        <div class="scroll">
+            <div id="news">
+            </div>
+        </div>
+        <!-- Scrolling Text End -->
+    </span>
 
-    .bottomleft {
-        position: absolute;
-        bottom: 0;
-        left: 16px;
-    }
+    <!--<span class="footer">
+        <p>Fill me in!</p>
+    </span>-->
 
-    .middle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
-
-    hr {
-        margin: auto;
-        width: 40%;
-    }
-
-    a {
-        display: block;
-        color: beige;
-    }
-</style>
-<body>
-<div class="bgimg">
-    <div class="topleft">
-        <p><img alt="Hogwarts Logo" src="images/hogwarts-logo.png" style="width: 10%; height: 10%"></p>
-    </div>
-    <div class="middle">
-        <h1>COMING SOON</h1>
-        <hr>
-        <!-- Display the countdown timer in an element -->
-        <p id="demo"></p>
-        <script>
-            // Set the date we're counting down to
-            var countDownDate = new Date("Dec 13, 2019 13:13:13").getTime();
-
-            // Update the count down every 1 second
-            var x = setInterval(function () {
-
-                // Get today's date and time
-                var now = new Date().getTime();
-
-                // Find the distance between now and the count down date
-                var distance = countDownDate - now;
-
-                // Time calculations for days, hours, minutes and seconds
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                // Display the result in the element with id="demo"
-                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                    + minutes + "m " + seconds + "s ";
-
-                // If the count down is finished, write some text
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("demo").innerHTML = "EXPIRED";
-                }
-            }, 1000);
-        </script>
-    </div>
-    <div class="bottomleft">
-        <p>This will be a functionality splash page. It is currently in development. If you would like an update please
-            email the <a href="mailto:headmaster@hogwartslibrary.com">Headmaster</a></p>
-    </div>
 </div>
 
 </body>

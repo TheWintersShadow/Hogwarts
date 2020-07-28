@@ -4,26 +4,28 @@
 
 """This script will get the local news."""
 
-import requests
-
+import requests, xmltodict
 from supportClasses.NewsData import *
 
 API_FIELDS = '?country=us&apiKey=8e8d472f7e5d470f91f513aeb7faf5f1'
 NEWS_WEBSITE = 'https://newsapi.org/v2/'
 TOP_NEWS = 'top-headlines'
 
+NYT_URL = "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml"
 
-def getTopNews():
+
+def getTechNews():
     topNews = requests.get(NEWS_WEBSITE + TOP_NEWS + API_FIELDS)
-    if topNews.status_code == 200:
-        return topNews.json()
+    tech_news = requests.get(NYT_URL)
+    if tech_news.status_code == 200:
+        return xmltodict.parse(tech_news.content)
     else:
         print('Get command failed to return data.')
 
 
 def getArticles(newsData):
     allArticles = dict()
-    article_list = newsData['articles']
+    article_list = newsData['rss']['channel']['item']
     news_number = 0
     for article in article_list:
         articleObj = NewsData()
@@ -32,9 +34,8 @@ def getArticles(newsData):
         articleObj.Author = getAuthor(article)
         articleObj.Description = getDescription(article)
         articleObj.ExternalURL = getURL(article)
-        articleObj.ImageURL = getImageURL(article)
+        #articleObj.ImageURL = getImageURL(article)
         articleObj.PublishedDate = getPublicationDate(article)
-        articleObj.FullContent = getArticleContent(article)
         articleObj.loadData()
         allArticles[news_number] = articleObj.getAttributes()
         news_number += 1
@@ -42,7 +43,7 @@ def getArticles(newsData):
 
 
 def getSource(article):
-    source = article['source']['name']
+    source = 'New York Times'
     return source
 
 
@@ -52,7 +53,7 @@ def getTitle(article):
 
 
 def getAuthor(article):
-    author = article['author']
+    author = article['dc:creator']
     return author
 
 
@@ -62,27 +63,22 @@ def getDescription(article):
 
 
 def getURL(article):
-    url = article['url']
+    url = article['link']
     return url
 
 
 def getImageURL(article):
-    image = article['urlToImage']
+    image = article['media:content']['@url']
     return image
 
 
 def getPublicationDate(article):
-    date = article['publishedAt']
+    date = article['pubDate'][:-15]
     return date
 
 
-def getArticleContent(article):
-    content = article['content']
-    return content
-
-
 def main():
-    topNewsData = getTopNews()
+    topNewsData = getTechNews()
     articles = getArticles(topNewsData)
     return articles
 

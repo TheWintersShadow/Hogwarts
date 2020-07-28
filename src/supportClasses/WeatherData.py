@@ -8,7 +8,7 @@ import json
 class WeatherData:
     def __init__(self, raw_data):
         self.raw = raw_data
-        self.periods = raw_data['periods']
+        self.periods = raw_data['properties']['periods']
         self.allDays = dict()
         self.__format_periods()
 
