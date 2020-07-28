@@ -5,3 +5,4 @@
 env/
 IMDb
 *.log
+.DS_Store
