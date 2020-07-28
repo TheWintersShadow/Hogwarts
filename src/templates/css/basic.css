@@ -1,0 +1,116 @@
+.links {
+    display: block;
+    vertical-align: middle;
+}
+
+.logos {
+    vertical-align: middle;
+}
+
+.title {
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+    border-radius: 15px;
+    box-shadow: 5px 10px 8px #888888;
+    grid-area: header;
+    background-color: #3366CC;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+
+/* The grid container */
+.grid-container {
+    color: white;
+    display: grid;
+    grid-template-columns: .5fr 2fr 1.25fr;
+    grid-template-rows: 1fr;
+    gap: 7px;
+    grid-template-areas:
+            "header header header"
+            "left middle right";
+            /*"footer footer footer";*/
+}
+
+
+/* Style the left column */
+.left {
+    border-radius: 15px;
+    box-shadow: 5px 10px 8px #888888;
+    grid-area: left;
+    background-color: #6699FF;
+    padding: 5px;
+}
+
+/* Style the middle column */
+.middle {
+    color: white;
+    border-radius: 15px;
+    box-shadow: 5px 10px 8px #888888;
+    grid-area: middle;
+    background-color: #164091;
+    padding: 10px;
+
+}
+
+/* Style the right column */
+.right {
+    border-radius: 15px;
+    box-shadow: 5px 10px 8px #888888;
+    grid-area: right;
+    background-color: #6699FF;
+    padding: 5px;
+}
+
+/* Style the footer */
+/*.footer {
+    border-radius: 15px;
+    grid-area: footer;
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}*/
+
+
+/* News Scrolling CSS */
+
+div.scroll {
+    /*margin: 4px;*/
+    /*padding: 4px;*/
+    /*background-color: green;*/
+    /*width: 100vh;*/
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+}
+
+#news {
+    color: black;
+    padding-right: 3px;
+}
+
+/* Weather Section */
+
+.weather_header {
+    width: 30vh;
+    height: 5vh;
+    text-align: center;
+}
+
+.weather_data {
+    width: 30vh;
+    padding: 3px;
+}
+
