@@ -6,7 +6,7 @@
     <link href="css/basic.css" rel="stylesheet">
     <title>NetSecure</title>
 </head>
-<body onload="NEWS(); WEATHER()">
+<body onload="NEWS(); WEATHER(); QoD();">
 <div class="grid-container">
     <span class="header">NetSecure Dashboard</span>
     <span class="left">
@@ -73,7 +73,7 @@
             <h3 class="title">IP Lookup</h3>
         <div style="text-align: center">
             IP Address: <input id='IP-ADDR' type="text">
-            <button onclick="IP_LOOKUP()" style="align-content: center">Locate</button>
+            <button class="button" onclick="IP_LOOKUP()" style="align-content: center">Locate</button>
         </div>
     </span>
     </span>
@@ -88,9 +88,9 @@
         <!-- Scrolling Text End -->
     </span>
 
-    <span class="footer">
+    <!--<span class="footer">
         <p>Fill me in!</p>
-    </span>
+    </span>-->
 
 </div>
 
