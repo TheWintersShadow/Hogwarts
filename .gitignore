@@ -6,3 +6,4 @@ env/
 IMDb
 *.log
 .DS_Store
+src/files/

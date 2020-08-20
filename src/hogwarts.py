@@ -61,6 +61,7 @@ def Quote():
 ###########################################################
 
 
+################## Website Files ##########################
 @app.route('/images/bitwarden.png')
 def send_bit():
     return send_file('./templates/images/bitwarden.png')
@@ -82,7 +83,7 @@ def send_pihole():
 
 
 @app.route('/images/wiki.png')
-def send_wiki():
+def send_wiki()
     return send_file('./templates/images/wiki.png')
 
 
@@ -94,6 +95,13 @@ def send_plugins():
 @app.route('/css/basic.css')
 def send_css():
     return send_file('./templates/css/basic.css')
+
+
+################## Data Science Files #####################
+@app.route('/files/enron/emails.csv')
+def return_enron_emails():
+    return send_file('./files/enron/emails.csv')
+
 
 
 if __name__ == "__main__":
