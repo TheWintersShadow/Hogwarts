@@ -83,7 +83,7 @@ def send_pihole():
 
 
 @app.route('/images/wiki.png')
-def send_wiki()
+def send_wiki():
     return send_file('./templates/images/wiki.png')
 
 
