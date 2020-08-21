@@ -2,18 +2,19 @@
 # Date: 8/9/2019
 # Time: 16:49
 
+import logging
+
 import Plugins.geo_ip as geo
 import Plugins.news as news
 import Plugins.quote as quote
 import Plugins.weather as weather
-import logging
 from flask import Flask, jsonify, render_template, request, send_file
 
 logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.DEBUG,
                     format='%(name)s -- %(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
 
-
-logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.INFO, format='%(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
+logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.INFO,
+                    format='%(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
 
 app = Flask(__name__)
 
@@ -102,6 +103,32 @@ def send_css():
 def return_enron_emails():
     return send_file('./files/enron/emails.csv')
 
+
+############### COVID Dashboard Data ######################
+
+@app.route('/files/covid/global_cases.csv')
+def return_global_cases():
+    return send_file('./files/covid/global_cases.csv')
+
+
+@app.route('/files/covid/global_deaths.csv')
+def return_global_deaths():
+    return send_file('./files/covid/global_deaths.csv')
+
+
+@app.route('/files/covid/global_recovered.csv')
+def return_global_recovered():
+    return send_file('./files/covid/global_recovered.csv')
+
+
+@app.route('/files/covid/US_cases.csv')
+def return_us_cases():
+    return send_file('./files/covid/US_cases.csv')
+
+
+@app.route('/files/covid/US_deaths.csv')
+def return_us_deaths():
+    return send_file('./files/covid/US_deaths.csv')
 
 
 if __name__ == "__main__":
