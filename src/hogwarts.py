@@ -2,6 +2,7 @@
 # Date: 8/9/2019
 # Time: 16:49
 
+import ssl
 import logging
 
 import Plugins.geo_ip as geo
@@ -10,14 +11,16 @@ import Plugins.quote as quote
 import Plugins.weather as weather
 from flask import Flask, jsonify, render_template, request, send_file
 
-logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.DEBUG,
-                    format='%(name)s -- %(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
+#logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.DEBUG,
+#                    format='%(name)s -- %(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
 
-logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.INFO,
-                    format='%(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
+#logging.basicConfig(filename='/var/www/Hogwarts/src/API.log', level=logging.INFO,
+#                    format='%(levelname)s: %(asctime)s %(message)s', datefmt='%m-%d-%Y %I:%M:%S %p')
 
 app = Flask(__name__)
 
+ctx = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
+ctx.load_cert_chain('../config/web.netsecure.dev.crt', '../config/web.netsecure.dev.key')
 
 ###########################################################
 ################## Main Returns ###########################
@@ -132,4 +135,4 @@ def return_us_deaths():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(ssl_context=ctx)

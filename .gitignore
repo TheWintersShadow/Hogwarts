@@ -7,3 +7,5 @@ IMDb
 *.log
 .DS_Store
 src/files/
+*.key
+*.crt
