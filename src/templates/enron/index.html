@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Enron Analytics</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin:auto;
+    }
+    /* Create two unequal columns that floats next to each other */
+    .column {
+      float: left;
+      padding: 10px;
+    }
+
+    .left.cluster {
+      width: 50%;
+    }
+
+    .right.cluster {
+      width: 50%;
+    }
+
+    .left.lda {
+      width: 30%;
+    }
+
+    .right.lda {
+      width: 70%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    #BLUE {
+      background-color: #6699cc;
+      padding: 10px;
+    }
+
+    #LIGHT-BLUE {
+      background-color: #9fbfdf;
+      padding: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <section class='row' id='BLUE'>
+    <h1>About Enron Data</h1>
+    <p>Talk about when Enron data is.</p>
+  </section>
+
+  <section class="row" id="LIGHT-BLUE">
+    <h1>LDA Analysis</h1>
+    <div class='column left lda'>
+      Talk about Enron Data Here.
+    </div>
+    <div class='column right lda'>
+      <iframe src="analytics/cluster.html" width="620px" height="620px"></iframe>
+    </div>
+  </section>
+
+  <section class="row" id='BLUE'>
+    <h1>Communication Clustering</h1>
+    <div class='column left cluster'>
+      Talk about Enron Data Here.
+    </div>
+    <div class='column right cluster'>
+      <iframe src="analytics/cluster.html" width="620px" height="620px"></iframe>
+    </div>
+  </section>
+</body>
+</html>
