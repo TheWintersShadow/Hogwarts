@@ -7,7 +7,7 @@
 import requests, xmltodict
 from supportClasses.NewsData import *
 
-API_FIELDS = '?country=us&apiKey=8e8d472f7e5d470f91f513aeb7faf5f1'
+API_FIELDS = '?country=us&apiKey=REDACTED'
 NEWS_WEBSITE = 'https://newsapi.org/v2/'
 TOP_NEWS = 'top-headlines'
 
